@@ -50,6 +50,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             progressView.progress = Float(webView.estimatedProgress)
+            if progressView.progress == 1.0 {
+                progressView.isHidden = true
+            } else {
+                progressView.isHidden = false
+            }
         }
     }
 
