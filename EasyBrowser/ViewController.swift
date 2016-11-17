@@ -90,6 +90,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 }
             }
         }
+        let alert = UIAlertController(title: "FORBIDDEN!!!", message: "You cannot access this site!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Excuse me", style: .cancel))
+        present(alert, animated: true)
         decisionHandler(.cancel)
     }
 
