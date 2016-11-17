@@ -14,7 +14,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
     
-    var websites = ["apple.com", "google.com.ua"]
+    var siteToShow: String?
     
     override func loadView() {
         webView = WKWebView()
@@ -43,8 +43,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
         webView.allowsBackForwardNavigationGestures = true
         
         //setting initial webpage to load:
-        let url = URL(string: "https://www.\(websites[0])")!
+        let url = URL(string: "https://www.\(siteToShow!)")!
         webView.load(URLRequest(url: url))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -60,7 +64,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
     func openTapped() {
         let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
-        for website in websites {
+        for website in TableViewController.websites {
             ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
         }
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -79,7 +83,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let url = navigationAction.request.url
         if let host = url!.host {
-            for website in websites {
+            for website in TableViewController.websites {
                 if host.range(of: website) != nil {
                     decisionHandler(.allow)
                     return
