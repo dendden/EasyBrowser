@@ -1,0 +1,7 @@
+apple.com
+google.com.ua
+dirty.ru
+uip.me
+youtube.com
+facebook.com
+twitter.com

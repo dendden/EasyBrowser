@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082AFBC41DDF00E00041FDF0 /* websites.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082AFBC31DDF00E00041FDF0 /* websites.txt */; };
 		08736ABA1DD9F124002074F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08736AB91DD9F124002074F7 /* AppDelegate.swift */; };
 		08736ABC1DD9F124002074F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08736ABB1DD9F124002074F7 /* ViewController.swift */; };
 		08736ABF1DD9F124002074F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08736ABD1DD9F124002074F7 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082AFBC31DDF00E00041FDF0 /* websites.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = websites.txt; sourceTree = "<group>"; };
 		08736AB61DD9F124002074F7 /* EasyBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08736AB91DD9F124002074F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08736ABB1DD9F124002074F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				08736AC01DD9F124002074F7 /* Assets.xcassets */,
 				08736AC21DD9F124002074F7 /* LaunchScreen.storyboard */,
 				08736AC51DD9F124002074F7 /* Info.plist */,
+				082AFBC31DDF00E00041FDF0 /* websites.txt */,
 			);
 			path = EasyBrowser;
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082AFBC41DDF00E00041FDF0 /* websites.txt in Resources */,
 				08736AC41DD9F124002074F7 /* LaunchScreen.storyboard in Resources */,
 				08736AC11DD9F124002074F7 /* Assets.xcassets in Resources */,
 				08736ABF1DD9F124002074F7 /* Main.storyboard in Resources */,
@@ -304,6 +308,7 @@
 				08736ACA1DD9F124002074F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

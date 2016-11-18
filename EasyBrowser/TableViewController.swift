@@ -10,12 +10,23 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    static let websites = ["apple.com", "google.com.ua"]
+    static var websites = [String]()
+    let defaultWebsites = ["apple.com", "google.com.ua"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "EasyBrowsr"
+        
+        if let websitesPath = Bundle.main.path(forResource: "websites", ofType: "txt") {
+            if let websitesSource = try? String(contentsOfFile: websitesPath) {
+                TableViewController.websites = websitesSource.components(separatedBy: "\n")
+            } else {
+                TableViewController.websites = defaultWebsites
+            }
+        } else {
+            TableViewController.websites = defaultWebsites
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
